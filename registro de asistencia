@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Asistencia - SENA</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2e7d32;
+        }
+
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: #388e3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background: #c8e6c9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📝 Registro de Asistencia</h1>
+
+    <input type="text" id="nombre" placeholder="Nombre del aprendiz">
+    <select id="estado">
+        <option value="Asistió">Asistió</option>
+        <option value="No asistió">No asistió</option>
+    </select>
+    <br><br>
+    <button onclick="registrar()">Registrar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Asistencia</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script>
+        function registrar() {
+            const nombre = document.getElementById("nombre").value;
+            const estado = document.getElementById("estado").value;
+
+            if (nombre === "") {
+                alert("Ingrese un nombre");
+                return;
+            }
+
+            const tabla = document.getElementById("tabla");
+            const fila = document.createElement("tr");
+
+            fila.innerHTML = `
+                <td>${nombre}</td>
+                <td>${estado}</td>
+                <td><button onclick="this.parentElement.parentElement.remove()">Eliminar</button></td>
+            `;
+
+            tabla.appendChild(fila);
+            document.getElementById("nombre").value = "";
+        }
+    </script>
+
+</body>
+</html>
