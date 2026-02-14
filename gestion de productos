@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Productos - SENA</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00695c;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #004d40;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            background: white;
+            margin: 8px auto;
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📦 Gestión de Productos</h1>
+
+    <input type="text" id="nombre" placeholder="Nombre del producto">
+    <input type="number" id="precio" placeholder="Precio">
+    <br><br>
+    <button onclick="agregarProducto()">Agregar producto</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        function agregarProducto() {
+            const nombre = document.getElementById("nombre").value;
+            const precio = document.getElementById("precio").value;
+
+            if (nombre === "" || precio === "") {
+                alert("Por favor llena todos los campos");
+                return;
+            }
+
+            const lista = document.getElementById("lista");
+            const item = document.createElement("li");
+
+            item.innerHTML = `${nombre} - $${precio}
+                <button onclick="this.parentElement.remove()"> ❌ </button>`;
+
+            lista.appendChild(item);
+
+            document.getElementById("nombre").value = "";
+            document.getElementById("precio").value = "";
+        }
+    </script>
+
+</body>
+</html>
