@@ -8,7 +8,6 @@ export const routes: Routes = [
     path: 'inicio',
     component: Inicio
 },
-];
 {
    path: 'Ejercicios',
     component: Ejercicios  
@@ -17,3 +16,4 @@ export const routes: Routes = [
      path: 'Contacto',
     component: Contacto 
 }
+];
