@@ -1,1 +1,46 @@
-<p>contacto works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h2>Formulario Personal</h2>
+
+    <form>
+
+        <!-- Nombre completo -->
+        <label>Nombre completo:</label><br>
+        <input type="text" name="nombre" required><br><br>
+
+        <!-- Número de identificación -->
+        <label>Número de identificación:</label><br>
+        <input type="number" name="id" required><br><br>
+
+        <!-- Fecha de nacimiento -->
+        <label>Fecha de nacimiento:</label><br>
+        <input type="date" name="fecha" required><br><br>
+
+        <!-- Estado civil -->
+        <label>Estado civil:</label><br>
+        <select name="estado_civil">
+            <option>Soltero/a</option>
+            <option>Casado/a</option>
+            <option>Divorciado/a</option>
+            <option>Viudo/a</option>
+        </select><br><br>
+
+        <!-- Checkbox -->
+        <label>
+            <input type="checkbox" name="terminos">
+            Acepto los términos y condiciones
+        </label><br><br>
+
+        <!-- Botón -->
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+</html>
